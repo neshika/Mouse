@@ -13,7 +13,19 @@ require "db.php";
 <?php
 //var_dump($_GET);
     $id = $_GET['id'];
-    
+    function bdika_sister($id){
+        echo ret_litter($id);
+        echo '<br>' . ret_mum_id($id);
+        echo '<br>' . ret_dad_id($id);
+        $array = R::getAll( 'SELECT id FROM litter' );
+        echo '<br> текст <br>';
+        foreach($array as $item) {
+              foreach ($item as $key => $value) {
+                 echo $value;
+             }    
+              echo "<br>";
+       }
+    }
 
    ?>
      <div>дата рождения <?php echo ret_cell('birth',$id,'mouse')?></div>
@@ -27,6 +39,7 @@ require "db.php";
 
      
  <?php 
+ bdika_sister($id);
  //require "/libs/down.php";
  require(__DIR__ . '/libs/down.php');
      
