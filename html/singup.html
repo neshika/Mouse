@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<title>Cимулятор заводчика</title>
+</head>
+<body>
+<form action="/signup.php" method = "POST">
+<h1 align="center">
+
+Добро пожаловать на страничку!<br>
+Просьба ввести данные, для регистрации
+</h1>
+	<div class="image_wrap2">
+	<p>
+		<p><strong>Ваше имя:</strong></p>
+		<input type="text" name="login" value="<?php echo @$data['login']; ?>">
+
+	</p>
+	<p>
+		<p><strong>Ваш Email:</strong></p>
+		<input type="email" name="email" value="<?php echo @$data['email']; ?>">
+		
+	</p>
+	<p>
+		<p><strong>Питомник:</strong></p>
+		<input type="text" name="kennel" value="<?php echo @$data['kennel']; ?>">
+		
+	</p>
+	<p>
+		<p><strong>Ваш пароль:</strong></p>
+		<input type="password" name="password" value="<?php echo @$data['password']; ?>">
+		
+	</p>
+	<p>
+		<p><strong>Ваш пароль еще раз:</strong></p>
+		<input type="password" name="password2" value="<?php echo @$data['password2']; ?>">
+		
+	</p>
+	<p>
+		<input id="button" name="do_sighup" type="submit" value="Регистрация" class = "knopka">
+		<a class="buttons" href="/index.php" >На главную</a>
+		
+		
+		
+				
+	</p>
+	</div>
+</form>
+</body>
+</html>

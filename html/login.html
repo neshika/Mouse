@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<title>Cимулятор заводчика</title>
+</head>
+<body>
+
+<form action="/login.php" method = "POST">
+<h1 align="center">
+
+Добро пожаловать на страничку!<br>
+Просьба ввести данные для идентификации
+</h1>
+	<div class="image_wrap">
+	<p>
+		<input type="text" name="login" value="<?php echo @$data['login']; ?>">
+
+	</p>
+		
+		<input type="password" name="password" value="<?php echo @$data['password']; ?>">
+		
+	<p>
+		<button type="submit" name="do_login" class="knopka">войти</button>
+		</form>
+		<form action="index.php">
+				<button type="submit" name ="1" class="knopka">на главную</button>
+                               <img src = "pic/image.jpg">
+</form>
+		
+	</p>
+	</div>
+
+</body>
+</html>
