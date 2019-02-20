@@ -1,9 +1,9 @@
 <?php
 //подключение файлов
 require "db.php";
-require "/html/header.html";
-require "/html/nav.html";
-require "/includes/functions.php"; 
+require(__DIR__ . '/html/header.html');
+require(__DIR__ . '/html/nav.html');
+require(__DIR__ . '/includes/functions.php'); 
 ?>
 <div class="content">
 <?php    
@@ -148,5 +148,5 @@ require "/includes/functions.php";
          }   //if( isset($_POST['puppy']) )
 
 //функция вызывающая футер сайта
-require "/libs/down.php";
+//require "/libs/down.php";
 ?> 

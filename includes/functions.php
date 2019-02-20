@@ -106,9 +106,11 @@ function ret_cell($value,$id,$tabl){   // $value='name' $id='1' $tabl='mouse'
               return $row[$value];
              case 'affics':
               return $row[$value];
-                  case 'puppy':
+            case 'puppy':
               return $row[$value];
-                       case 'litter':
+            case 'litter':
+              return $row[$value];
+            case 'litter_id':
               return $row[$value];
             case 'genome':
               return $row[$value];
@@ -187,7 +189,7 @@ Function mouse_pic_size($id,$size){
 Function mouse_pic_url_size($id,$size){
    $url=R::getCell( 'SELECT url FROM mouse WHERE id = :id',
        [':id' => $id]);
-       ?> <a href="/mouse.php?id=<?php echo $id;?>"><?php echo $id;?>
+       ?> <a href="/mouse.php?id=<?php echo $id;?>"><?php echo $id . ' ' . ret_cell('name',$id,'mouse');?>
            <img src="pic/<?php echo $url;?>" height="<?php echo $size?>"></a>
        <?php
 }
@@ -276,7 +278,7 @@ function info($id){
        <table>
             <tr>
                <td>имя: </td>
-                <td><?php echo $mouse_data['name']; ?></td>
+                <td><?php echo $id . ' ' . $mouse_data['name']; ?></td>
             </tr>
             <tr>
                  <td>порода: </td>
@@ -302,11 +304,10 @@ function info($id){
 function data_for_pedirgee($id){
     If($id!=0){
 ?>
-         <h2><?php echo $id .' ' . ret_cell('name',$id,'mouse');?></h2>
             <br><?php mouse_pic_url_size($id,75);?>
             <br><strong>Тип: </strong><?php echo ret_coat($id);?>/<?php echo ret_color($id); ?>
             <br><strong>Д/р: </strong> <?php echo ret_cell('birth',$id,'mouse');?>
-            <br><strong>Геном: </strong><?php echo ret_cell('genome',$id,'mouse');?>
+            <br><strong>Генетика: </strong><?php echo ret_cell('genome',$id,'mouse');?>
             <br><strong>Заметки: </strong><?php echo ret_cell('note',$id,'mouse');?>
 <?php
     }
