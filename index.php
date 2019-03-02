@@ -26,7 +26,7 @@ require "includes/functions.php";
 		
 
   		<a class="buttons" href='/login.php'>Да</a>
-		<a class="buttons" href='index1.html'>НЕТ</a>
+		<a class="buttons" href='/nosession.php'>НЕТ</a>
 
 		<?php
 		

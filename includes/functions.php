@@ -193,6 +193,14 @@ Function mouse_pic_url_size($id,$size){
            <img src="pic/<?php echo $url;?>" height="<?php echo $size?>"></a>
        <?php
 }
+
+Function mouse_pic_url_size_guest($id,$size){
+   $url=R::getCell( 'SELECT url FROM mouse WHERE id = :id',
+       [':id' => $id]);
+       ?> <a href="/mouseGuest.php?id=<?php echo $id;?>"><?php echo $id . ' ' . ret_cell('name',$id,'mouse');?>
+           <img src="pic/<?php echo $url;?>" height="<?php echo $size?>"></a>
+       <?php
+}
 function ret_owner(){
 	return $_SESSION['logged_user']->login;
 }
@@ -305,6 +313,18 @@ function data_for_pedirgee($id){
     If($id!=0){
 ?>
             <br><?php mouse_pic_url_size($id,75);?>
+            <br><strong>Тип: </strong><?php echo ret_coat($id);?>/<?php echo ret_color($id); ?>
+            <br><strong>Д/р: </strong> <?php echo ret_cell('birth',$id,'mouse');?>
+            <br><strong>Генетика: </strong><?php echo ret_cell('genome',$id,'mouse');?>
+            <br><strong>Заметки: </strong><?php echo ret_cell('note',$id,'mouse');?>
+<?php
+    }
+   
+}
+function data_for_pedirgee_guest($id){
+    If($id!=0){
+?>
+            <br><?php mouse_pic_url_size_guest($id,75);?>
             <br><strong>Тип: </strong><?php echo ret_coat($id);?>/<?php echo ret_color($id); ?>
             <br><strong>Д/р: </strong> <?php echo ret_cell('birth',$id,'mouse');?>
             <br><strong>Генетика: </strong><?php echo ret_cell('genome',$id,'mouse');?>

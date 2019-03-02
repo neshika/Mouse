@@ -3,9 +3,6 @@ require "db.php";
         //подключение файлов
 require(__DIR__ . '/html/header.html');
 require(__DIR__ . '/html/aside.html');
-      //require(__DIR__ . '/html/nav.html');
-     //  require "/html/header.html";
-      // require "/html/nav.html";
         require "includes/functions.php"; 
 ?> 
 <link rel="stylesheet" href="/css/style.css" type="text/css" />
@@ -26,14 +23,13 @@ require(__DIR__ . '/html/aside.html');
                  foreach($array as $item) {
                         foreach ($item as $key => $value) {
                    
-                             mouse_pic_url_size($value,45);
+                             mouse_pic_url_size_guest($value,45);
                              echo '<br>';
                                        
                         }
                 }
          }
               
-
     }
 //bdika_sister($id);
    ?>

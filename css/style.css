@@ -96,7 +96,7 @@ p {и в конце параграфов}*/
     border: 1px groove #9868CE;
 }
 .left_sidebar{
-    width: 200px;
+    width: 170px;
     height: auto;
     float: left;
     background: #FAFABF;
@@ -106,6 +106,15 @@ p {и в конце параграфов}*/
  
 .content{
     width: 1400px;  /*520*/
+    height: auto;
+    float: left;
+    background: #E0E0E0;
+    border: 1px groove #9868CE;
+    padding: 3px;
+            
+}
+.content2{
+    width: 1200px;  /*520*/
     height: auto;
     float: left;
     background: #E0E0E0;
